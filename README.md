@@ -1,17 +1,14 @@
-playdoh
-=======
+Kitchensink collection server
+=============================
 
-Mozilla's Playdoh is a web application template based on [Django][django].
+Site is collecting data from the tests run by the [kitchensinkapp]
 
-Patches are welcome! Feel free to fork and contribute to this project on
-[github][gh-playdoh].
 
-Full [documentation][docs] is available as well.
-
+Collected data is presented in graphical form. There is also an API provided
+for collecting and retrieving data.
 
 [django]: http://www.djangoproject.com/
-[gh-playdoh]: https://github.com/mozilla/playdoh
-[docs]: http://playdoh.rtfd.org/
+[kitchensinkapp]: https://github.com/mozilla/KitchenSink/
 
 
 License
