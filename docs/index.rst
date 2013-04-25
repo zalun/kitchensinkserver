@@ -1,9 +1,15 @@
-========================================
-Welcome to this project's documentation!
-========================================
+=============================
+Kitchensink collection server
+=============================
 
-This is a documentation template for a **web application based on Playdoh**.
-Feel free to change this to your liking.
+About KitchenSinkServer
+-----------------------
+
+Site is collecting data from the tests run by the `Kitchensink app 
+<https://github.com/mozilla/KitchenSink/>`_.
+
+Collected data is presented in graphical form. There is also an API provided
+for collecting and retrieving data.
 
 
 About playdoh
@@ -20,6 +26,8 @@ Contents
 
 .. toctree::
    :maxdepth: 1
+
+   development.rst
 
 
 Indices and tables
