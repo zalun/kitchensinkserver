@@ -1,13 +1,14 @@
 #!/usr/bin/env python
 import os
 import sys
+import site
 
 # Edit this if necessary or override the variable in your environment.
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'KitchenSinkServer.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'kitchensink.settings')
 
 # Add a temporary path so that we can import the funfactory
 tmp_path = os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                        'vendor', 'src', 'funfactory')
+                        'vendor', 'src', 'funfactory', 'KitchenSinkServer')
 # Comment out to load funfactory from your site packages instead
 sys.path.insert(0, tmp_path)
 
