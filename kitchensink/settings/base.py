@@ -17,16 +17,11 @@ INSTALLED_APPS = get_apps(
             # Application base, containing global templates.
             '%s.base' % PROJECT_MODULE,
             '%s.phone' % PROJECT_MODULE,
+            '%s.device' % PROJECT_MODULE,
             # drives API
             'tastypie',
             # admin
             'django.contrib.admin'))
-
-# switching off the Locale middleware
-USE_L10N = False
-
-MIDDLEWARE_CLASSES = get_middleware(
-        exclude=('funfactory.middleware.LocaleURLMiddleware'))
 
 LOCALE_PATHS = (
     os.path.join(ROOT, PROJECT_MODULE, 'locale'),
@@ -87,3 +82,7 @@ DOMAIN_METHODS['messages'] = [
 # ]
 
 LOGGING = dict(loggers=dict(playdoh = {'level': logging.DEBUG}))
+
+SUPPORTED_NONLOCALES = list(SUPPORTED_NONLOCALES) + [
+    'api',
+]
