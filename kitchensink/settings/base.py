@@ -7,17 +7,26 @@ from funfactory.settings_base import *
 # If you did not install Playdoh with the funfactory installer script
 # you may need to edit this value. See the docs about installing from a
 # clone.
-PROJECT_MODULE = 'KitchenSinkServer'
+PROJECT_MODULE = 'kitchensink'
 
 # Defines the views served for root URLs.
 ROOT_URLCONF = '%s.urls' % PROJECT_MODULE
 
-INSTALLED_APPS = list(INSTALLED_APPS) + [
-    # Application base, containing global templates.
-    '%s.base' % PROJECT_MODULE,
-    # drives API
-    'tastypie'
-]
+INSTALLED_APPS = get_apps(
+        append=(
+            # Application base, containing global templates.
+            '%s.base' % PROJECT_MODULE,
+            '%s.phone' % PROJECT_MODULE,
+            # drives API
+            'tastypie',
+            # admin
+            'django.contrib.admin'))
+
+# switching off the Locale middleware
+USE_L10N = False
+
+MIDDLEWARE_CLASSES = get_middleware(
+        exclude=('funfactory.middleware.LocaleURLMiddleware'))
 
 LOCALE_PATHS = (
     os.path.join(ROOT, PROJECT_MODULE, 'locale'),

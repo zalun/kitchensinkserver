@@ -4,7 +4,6 @@ Development Notes
 
 Sructure
 ########
-
 Uniqueness
 ----------
 We don't want to have multiple identical submits from the same phone. It needs 
@@ -32,3 +31,30 @@ Test results
 APIs will be added and possibly removed. there might be more than one test per
 API. Mintaining the database structure might be complicated - we should 
 consider using text database (Redis?).
+
+
+API
+###
+
+We are using tastypie.
+
+phone/
+------
+GET only
+will create a unique id and return
+
+device/
+-------
+GET
+LIST
+
+PUSH Depends on our choice
+
+result/
+-------
+GET
+PUSH
+
+Stored in non relational database
+Result will connect phone, device and will contain test data
+We should be able to retrieve statistical information by device, time
