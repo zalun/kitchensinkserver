@@ -16,7 +16,7 @@ class MakeResource(ModelResource):
         always_return_data = True
         filtering = {
             'pk': ALL,
-            'name': ALL,
+            'slug': ALL,
         }
 
 

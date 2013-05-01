@@ -1,0 +1,34 @@
+[
+  {
+    "pk": 2,
+    "model": "device.make",
+    "fields": {
+      "name": "HTC",
+      "slug": "htc"
+    }
+  },
+  {
+    "pk": 1,
+    "model": "device.make",
+    "fields": {
+      "name": "LG",
+      "slug": "lg"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "device.device",
+    "fields": {
+      "make": "htc",
+      "model": "DesireZ"
+    }
+  },
+  {
+    "pk": 1,
+    "model": "device.device",
+    "fields": {
+      "make": "lg",
+      "model": "Nexus4"
+    }
+  }
+]

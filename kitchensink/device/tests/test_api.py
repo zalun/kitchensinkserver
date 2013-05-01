@@ -16,7 +16,7 @@ _log = logging.getLogger('kss.%s' % __name__)
 class TestAPI(TestCase):
 
     def setUp(self):
-        self.lg = Make.objects.create(name='LG')
+        self.lg = Make.objects.create(name='LG', slug='lg')
         self.nexus = Device.objects.create(make=self.lg, model='Nexus4')
 
     def test_get_makes(self):
@@ -28,7 +28,7 @@ class TestAPI(TestCase):
         eq_(data['objects'][0]['name'], self.lg.name)
 
     def test_get_devices_for_make(self):
-        url = '%s?make__name=%s' % (Device.get_api_uri('v1'), self.lg.name)
+        url = '%s?make__slug=%s' % (Device.get_api_uri('v1'), self.lg.slug)
         response = self.client.get(url, content_type='application/json')
         eq_(response.status_code, 200)
         data = simplejson.loads(response.content)
