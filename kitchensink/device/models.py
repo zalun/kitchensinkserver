@@ -18,6 +18,9 @@ class Make(BaseModel):
     # BaseModel uses it to provide api urls
     resource_name = 'make'
 
+    class Meta:
+        ordering = ('name',)
+
     def __unicode__(self):
         return self.name
 
@@ -30,6 +33,9 @@ class Device(BaseModel):
     model = models.CharField(max_length=100)
     # BaseModel uses it to provide api urls
     resource_name = 'device'
+
+    class Meta:
+        ordering = ('model',)
 
     def __unicode__(self):
         return self.make.name + ' ' + self.model
