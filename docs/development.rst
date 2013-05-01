@@ -48,7 +48,12 @@ device/
 GET
 LIST
 
-PUSH Depends on our choice
+PUSH Depends on our choice - should we allow people to add devices?
+
+Fields:
+
+* make (LG)
+* model (Nexus4)
 
 result/
 -------

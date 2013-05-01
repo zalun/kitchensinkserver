@@ -1,6 +1,6 @@
 """
-phone.api.resources
--------------------
+phone.api
+---------
 """
 from tastypie.resources import ModelResource
 from tastypie.authorization import Authorization

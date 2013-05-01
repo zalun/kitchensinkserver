@@ -2,7 +2,6 @@
 phone.models
 ------------
 """
-
 import logging
 
 from django.db import models
