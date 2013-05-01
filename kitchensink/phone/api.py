@@ -2,8 +2,8 @@
 phone.api
 ---------
 """
-from tastypie.resources import ModelResource
 from tastypie.authorization import Authorization
+from tastypie.resources import ModelResource
 
 from kitchensink.phone.models import Phone
 

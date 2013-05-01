@@ -16,11 +16,13 @@ class Make(BaseModel):
     """ Which company made the device (i.e. LG)
     """
     objects = MakeManager()
-
-    name = models.CharField(max_length=100, unique=True)
-    slug = models.SlugField(max_length=100)
     # BaseModel uses it to provide api urls
     resource_name = 'make'
+
+    #:
+    name = models.CharField(max_length=100, unique=True)
+    #:
+    slug = models.SlugField(max_length=100)
 
     class Meta:
         ordering = ('name',)
@@ -35,11 +37,13 @@ class Make(BaseModel):
 class Device(BaseModel):
     """ What is the model of the device (i.e. make:LG, model:Nexus4)
     """
-    #:
-    make = models.ForeignKey(Make)
-    model = models.CharField(max_length=100)
     # BaseModel uses it to provide api urls
     resource_name = 'device'
+
+    #:
+    make = models.ForeignKey(Make)
+    #:
+    model = models.CharField(max_length=100)
 
     class Meta:
         ordering = ('model',)
