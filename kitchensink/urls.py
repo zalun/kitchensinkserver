@@ -8,6 +8,7 @@ from tastypie.api import Api
 
 from phone.api import PhoneResource
 from device.api import MakeResource, DeviceResource
+from collection.api import ResultResource
 
 patch()
 admin.autodiscover()
@@ -16,6 +17,7 @@ v1_api = Api(api_name='v1')
 v1_api.register(PhoneResource())
 v1_api.register(MakeResource())
 v1_api.register(DeviceResource())
+v1_api.register(ResultResource())
 
 urlpatterns = patterns('',
     # Generate a robots.txt

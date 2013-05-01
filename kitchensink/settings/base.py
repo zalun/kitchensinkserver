@@ -18,6 +18,7 @@ INSTALLED_APPS = get_apps(
             '%s.base' % PROJECT_MODULE,
             '%s.phone' % PROJECT_MODULE,
             '%s.device' % PROJECT_MODULE,
+            '%s.collection' % PROJECT_MODULE,
             # drives API
             'tastypie',
             # admin

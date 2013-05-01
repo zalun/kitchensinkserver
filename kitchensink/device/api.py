@@ -21,7 +21,7 @@ class MakeResource(ModelResource):
 
 
 class DeviceResource(ModelResource):
-    make = fields.ForeignKey(MakeResource, 'make', full=True, null=True)
+    make = fields.ForeignKey(MakeResource, 'make', full=True)
 
     class Meta:
         queryset = Device.objects.all()
