@@ -17,6 +17,10 @@ class ResultResource(ModelResource):
 
     class Meta:
         queryset = Result.objects.all()
-        allowed_methods = ('post',)
+        allowed_methods = ('get', 'post')
         authorization = Authorization()
         always_return_data = True
+        filtering = {
+            'device': ALL_WITH_RELATIONS,
+            'phone': ALL_WITH_RELATIONS
+        }

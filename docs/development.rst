@@ -63,3 +63,20 @@ PUSH
 Stored in non relational database
 Result will connect phone, device and will contain test data
 We should be able to retrieve statistical information by device, time
+
+Test result format:
+
+.. code-block:: json
+
+    {
+        {api_name}: {
+            "preparation": (-1/0/1), # -1: no preparation needed
+                                     #  0: not prepared (and it should)
+                                     #  1: prepared
+            "tests": [
+                [{testName}: (0/1)], #  0: failed
+                                     #  1: passed
+                ...
+            ]
+        }
+    }

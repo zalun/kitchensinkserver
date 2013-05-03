@@ -15,8 +15,7 @@ class MakeResource(ModelResource):
         allowed_methods = ('get',)
         always_return_data = True
         filtering = {
-            'pk': ALL,
-            'slug': ALL,
+            'slug': ALL
         }
 
 
@@ -30,4 +29,5 @@ class DeviceResource(ModelResource):
         always_return_data = True
         filtering = {
             'make': ALL_WITH_RELATIONS,
+            'model': ALL
         }
