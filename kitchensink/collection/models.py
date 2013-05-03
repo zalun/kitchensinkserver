@@ -21,7 +21,7 @@ class Result(BaseModel):
     #: Unique id of the kitchensink app
     phone = models.ForeignKey(Phone)
     #: Phone model
-    device = models.ForeignKey(Device, related_name='results')
+    device = models.ForeignKey(Device, related_name='results', null=True, blank=True)
     #: version of the kitchecnsink app
     app_version = models.CharField(max_length=10)
     #: value of ``navigator.userAgent``

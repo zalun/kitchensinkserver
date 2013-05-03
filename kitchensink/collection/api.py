@@ -12,7 +12,7 @@ from kitchensink.collection.models import Result
 
 
 class ResultResource(ModelResource):
-    device = fields.ForeignKey(DeviceResource, 'device')
+    device = fields.ForeignKey(DeviceResource, 'device', null=True)
     phone = fields.ForeignKey(PhoneResource, 'phone')
 
     class Meta:
