@@ -25,6 +25,7 @@ class TestAPI(TestCase):
     def test_add_result(self):
         url = Result.get_api_uri('v1')
         test_result = {
+            "app_version": '0.1',
             "device": self.device.get_resource_uri('v1'),
             "phone": self.phone.get_resource_uri('v1'),
             "user_agent": "user agent",
@@ -37,8 +38,24 @@ class TestAPI(TestCase):
         eq_(Result.objects.count(), 1)
         eq_(self.device.results.count(), 1)
 
+    def test_add_result_without_model(self):
+        url = Result.get_api_uri('v1')
+        test_result = {
+            "app_version": '0.1',
+            "phone": self.phone.get_resource_uri('v1'),
+            "user_agent": "user agent",
+            "test_result": "test result"
+        }
+
+        post_response = self.client.post(url, content_type='application/json',
+                                         data=simplejson.dumps(test_result))
+        eq_(post_response.status_code, 201)
+        eq_(Result.objects.count(), 1)
+        eq_(self.device.results.count(), 0)
+
     def test_list_results_by_model(self):
         test_result = {
+            "app_version": '0.1',
             "device": self.device,
             "phone": self.phone,
             "user_agent": "user agent  1",
