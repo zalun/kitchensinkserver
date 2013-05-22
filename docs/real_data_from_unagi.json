@@ -1,0 +1,172 @@
+{
+    "webtelephony": {
+        "preparation": 1,
+        "tests": {}
+    },
+    "vibration": {
+        "preparation": 1,
+        "tests": {}
+    },
+    "websms": {
+        "preparation": 2,
+        "tests": {}
+    },
+    "idle": {
+        "preparation": 1,
+        "tests": {}
+    },
+    "settings": {
+        "preparation": 1,
+        "tests": {}
+    },
+    "powermanagement": {
+        "preparation": 1,
+        "tests": {}
+    },
+    "mobileconnection": {
+        "preparation": 1,
+        "tests": {}
+    },
+    "tcpsocket": {
+        "preparation": 1,
+        "tests": {}
+    },
+    "wifiinfo": {
+        "preparation": 0,
+        "tests": {}
+    },
+    "bluetooth": {
+        "preparation": 1,
+        "tests": {}
+    },
+    "networkinfo": {
+        "preparation": 1,
+        "tests": {}
+    },
+    "battery": {
+        "preparation": 1,
+        "tests": {
+            "Battery discharging time": 1,
+            "Battery level value": 1
+        }
+    },
+    "browserapi": {
+        "preparation": -1,
+        "tests": {
+            "methods present in browser tag": 0
+        }
+    },
+    "timeclock": {
+        "preparation": 1,
+        "tests": {}
+    },
+    "pushnotifications": {
+        "preparation": -1,
+        "tests": {}
+    },
+    "permissions": {
+        "preparation": 0,
+        "tests": {}
+    },
+    "networkstats": {
+        "preparation": 1,
+        "tests": {}
+    },
+    "webpaymentapi": {
+        "preparation": 1,
+        "tests": {}
+    },
+    "archive": {
+        "preparation": 0,
+        "tests": {}
+    },
+    "screenorientation": {
+        "preparation": 1,
+        "tests": {
+            "value of the orientation attribute": 1
+        }
+    },
+    "openwebapps": {
+        "preparation": 1,
+        "tests": {
+            "": 1
+        }
+    },
+    "systemxhr": {
+        "preparation": -1,
+        "tests": {
+            "retrieve and parse a JSON file": 1
+        }
+    },
+    "cors": {
+        "preparation": -1,
+        "tests": {
+            "Post data to external server and parse JSON response": 1
+        }
+    },
+    "ambientlight": {
+        "preparation": 1,
+        "tests": {
+            "ambient light value is positive": 1
+        }
+    },
+    "webfm": {
+        "preparation": 1,
+        "tests": {
+            "switch on and off": 1
+        }
+    },
+    "alarm": {
+        "preparation": 1,
+        "tests": {
+            "add/remove alarms": 1
+        }
+    },
+    "contacts": {
+        "preparation": 1,
+        "tests": {
+            "create and remove a contact": 1
+        }
+    },
+    "geolocation": {
+        "preparation": 1,
+        "timeout": 1,
+        "tests": {
+            "coords returned in getCurrentPosition": 0
+        }
+    },
+    "devicestorage": {
+        "preparation": 1,
+        "timeout": 1,
+        "tests": {
+            "create and delete": 0
+        }
+    },
+    "activities": {
+        "preparation": 1,
+        "timeout": 1,
+        "tests": {}
+    },
+    "filehandleapi": {
+        "preparation": -1,
+        "timeout": 1,
+        "tests": {}
+    },
+    "indexeddb": {
+        "preparation": 1,
+        "timeout": 1,
+        "tests": {}
+    },
+    "proximity": {
+        "preparation": 1,
+        "timeout": 1,
+        "tests": {}
+    },
+    "undefined": {
+        "preparation": 1,
+        "timeout": 1,
+        "tests": {
+            "coords returned in getCurrentPosition": 0
+        }
+    }
+}

@@ -12,14 +12,13 @@ from kitchensink.collection.models import Result
 
 
 class ResultResource(ModelResource):
-    device = fields.ForeignKey(DeviceResource, 'device', null=True)
     phone = fields.ForeignKey(PhoneResource, 'phone')
+    device = fields.ForeignKey(DeviceResource, 'device', null=True)
 
     class Meta:
         queryset = Result.objects.all()
         allowed_methods = ('get', 'post')
         authorization = Authorization()
-        always_return_data = True
         filtering = {
             'device': ALL_WITH_RELATIONS,
             'phone': ALL_WITH_RELATIONS
