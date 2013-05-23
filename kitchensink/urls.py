@@ -9,6 +9,7 @@ from tastypie.api import Api
 from phone.api import PhoneResource
 from device.api import MakeResource, DeviceResource
 from collection.api import ResultResource
+from cors.api import CORSResource
 
 patch()
 admin.autodiscover()
@@ -18,6 +19,7 @@ v1_api.register(PhoneResource())
 v1_api.register(MakeResource())
 v1_api.register(DeviceResource())
 v1_api.register(ResultResource())
+v1_api.register(CORSResource())
 
 urlpatterns = patterns('',
     # Generate a robots.txt

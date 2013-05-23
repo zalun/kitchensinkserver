@@ -73,10 +73,11 @@ Test result format:
             "preparation": (-1/0/1), # -1: no preparation needed
                                      #  0: not prepared (and it should)
                                      #  1: prepared
-            "tests": [
-                [{testName}: (0/1)], #  0: failed
+            "tests": {
+                {testName}: (0/1),   #  0: failed
                                      #  1: passed
                 ...
-            ]
+            },
+            ("timeout": 1)           #  any test interrupted by setTimeout
         }
     }
