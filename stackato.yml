@@ -1,0 +1,36 @@
+name: kitchensink
+min-version:
+  client: 1.4.3
+ignores:
+  - ".git"
+  - "*.pyc"
+  - "*.pyo"
+  - "*.swp"
+  - "*~"
+  - "*.sublime*"
+  - ".coverage*"
+  - "_coverage/*"
+  - ".noseids"
+  - "kitchensink/settings/local.py"
+env:
+  DJANGO_SETTINGS_MODULE: kitchensink.settings
+  PIP_OPTS: --no-deps --exists-action=w
+  PIP_REQUIREMENTS_FILE: requirements/prod.txt
+
+requirements:
+  pypm:
+    - MySQL-python==1.2.3
+    - py-bcrypt==0.2
+    - lxml==2.2.6
+    - gunicorn
+services:
+  ${name}-db: mysql
+
+mem: 128M
+
+framework:
+  type: python
+  start-file: wsgi/playdoh.py
+
+processes:
+  web: gunicorn -b 0.0.0.0:$PORT wsgi.playdoh
