@@ -1,6 +1,8 @@
 name: kitchensink
+
 min-version:
   client: 1.4.3
+
 ignores:
   - ".git"
   - "*.pyc"
@@ -23,14 +25,18 @@ requirements:
     - py-bcrypt==0.2
     - lxml==2.2.6
     - gunicorn
+
 services:
   ${name}-db: mysql
 
 mem: 128M
 
+hooks:
+  post-staging:
+    - python manage.py syncdb --noinput
+
 framework:
   type: python
   start-file: wsgi/playdoh.py
 
-processes:
-  web: gunicorn -b 0.0.0.0:$PORT wsgi.playdoh
+runtime: python27

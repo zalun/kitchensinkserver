@@ -1,2 +1,3 @@
 django-tastypie
+mysql-python
 -r ../vendor/src/funfactory/funfactory/requirements/prod.txt
