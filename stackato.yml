@@ -1,8 +1,5 @@
 name: kitchensink
 
-min-version:
-  client: 1.4.3
-
 ignores:
   - ".git"
   - "*.pyc"
@@ -13,18 +10,30 @@ ignores:
   - ".coverage*"
   - "_coverage/*"
   - ".noseids"
-  - "kitchensink/settings/local.py"
+  - "*settings/local.py"
 env:
   DJANGO_SETTINGS_MODULE: kitchensink.settings
-  PIP_OPTS: --no-deps --exists-action=w
-  PIP_REQUIREMENTS_FILE: requirements/prod.txt
+  #PIP_OPTS: --no-deps --exists-action=w
+  PIP_REQUIREMENTS_FILE: requirements/dev.txt
+  DJANGO_SECRET_KEY: ${random-word}
 
 requirements:
+  ubuntu:
+    - python-imaging-dbg
+    - python-lxml
+    - python-kombu
   pypm:
+    - dj-database-url
     - MySQL-python==1.2.3
     - py-bcrypt==0.2
     - lxml==2.2.6
     - gunicorn
+    - funfactory
+    - django==1.4
+    - django-nose
+    - pytz
+    - jinja2
+    - django-compressor
 
 services:
   ${name}-db: mysql
@@ -37,6 +46,8 @@ hooks:
 
 framework:
   type: python
-  start-file: wsgi/playdoh.py
+  start-file: wsgi/playdoh.wsgi
+  runtime: python27
 
-runtime: python27
+# processes:
+#   web: gunicorn -b 0.0.0.0:8001 wsgi.playdoh

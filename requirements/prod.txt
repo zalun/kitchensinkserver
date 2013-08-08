@@ -1,3 +1,2 @@
-django-tastypie
-mysql-python
--r ../vendor/src/funfactory/funfactory/requirements/prod.txt
+-r ./funfactory-prod.txt
+django-tastypie==0.9.9

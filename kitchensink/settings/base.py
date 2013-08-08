@@ -15,16 +15,19 @@ PROJECT_MODULE = 'kitchensink'
 ROOT_URLCONF = '%s.urls' % PROJECT_MODULE
 
 INSTALLED_APPS = get_apps(
-        append=(
-            # Application base, containing global templates.
-            '%s.base' % PROJECT_MODULE,
-            '%s.phone' % PROJECT_MODULE,
-            '%s.device' % PROJECT_MODULE,
-            '%s.collection' % PROJECT_MODULE,
-            # drives API
-            'tastypie',
-            # admin
-            'django.contrib.admin'))
+    exclude=(
+        'djcelery'
+    ),
+    append=(
+        # Application base, containing global templates.
+        '%s.base' % PROJECT_MODULE,
+        '%s.phone' % PROJECT_MODULE,
+        '%s.device' % PROJECT_MODULE,
+        '%s.collection' % PROJECT_MODULE,
+        # drives API
+        'tastypie',
+        # admin
+        'django.contrib.admin'))
 
 DATABASES = {}
 if 'DATABASE_URL' in os.environ:
