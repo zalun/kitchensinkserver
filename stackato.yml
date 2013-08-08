@@ -13,7 +13,6 @@ ignores:
   - "*settings/local.py"
 env:
   DJANGO_SETTINGS_MODULE: kitchensink.settings
-  #PIP_OPTS: --no-deps --exists-action=w
   PIP_REQUIREMENTS_FILE: requirements/dev.txt
   DJANGO_SECRET_KEY: ${random-word}
 
@@ -49,5 +48,3 @@ framework:
   start-file: wsgi/playdoh.wsgi
   runtime: python27
 
-# processes:
-#   web: gunicorn -b 0.0.0.0:8001 wsgi.playdoh

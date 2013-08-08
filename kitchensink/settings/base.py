@@ -53,6 +53,30 @@ else:
         'PORT': '',  # Set to empty string for default.
     }
 
+DATABASES = {}
+if 'DATABASE_URL' in os.environ:
+    url = urlparse.urlparse(os.environ['DATABASE_URL'])
+    DATABASES['default'] = {
+        'NAME': url.path[1:],
+        'USER': url.username,
+        'PASSWORD': url.password,
+        'HOST': url.hostname,
+        'PORT': url.port,
+    }
+    if url.scheme == 'postgres':
+        DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql_psycopg2'
+    elif url.scheme == 'mysql':
+        DATABASES['default']['ENGINE'] = 'django.db.backends.mysql'
+else:
+    DATABASES['default'] = {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'dev.db',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': '',  # Set to empty string for localhost.
+        'PORT': '',  # Set to empty string for default.
+    }
+
 LOCALE_PATHS = (
     os.path.join(ROOT, PROJECT_MODULE, 'locale'),
 )
